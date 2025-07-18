@@ -1,4 +1,4 @@
-# **JomNiaga - Test Project**
+# **JomNiaga**
 
 #### *"Simplifying business for all in one platform, one journey, and endless growth."* 🚀
 
@@ -60,17 +60,15 @@ By streamlining onboarding into a **single, reusable flow**, JomNiaga reduces pa
 
 ## 🛠️ Technology Stack
 
-# Solution Architecture & Technology Stack
-
 This document outlines the architecture and technologies used in the MSME onboarding and loan application platform.
 
-## **Architecture Overview**
+### **Architecture Overview**
 
 The solution is composed of four main layers:
 
 ---
 
-## **1️⃣ Front-end**
+### **1️⃣ Front-end**
 
 **Technology:**  
 - **React Native**
@@ -82,34 +80,34 @@ The solution is composed of four main layers:
 
 ---
 
-## **2️⃣ Back-end**
+### **2️⃣ Back-end**
 
 **Technology:**  
 - **FastAPI (Python)** or **Node.js**
 
 **Features:**
 
-### Loan Stress Test Module
+#### Loan Stress Test Module
 - **Python Script**
     - Calculate **Debt Service Ratio (DSR)**
     - Compute **Business Volatility**
     - Categorize **Risk Level**: Safe, Moderate, High Risk
 
-### Auto Fill-in Registration
+#### Auto Fill-in Registration
 - **OCR & Computer Vision**
     - Use **Snap IC** feature to capture identity card images
     - Extract text data (IC number, Name, Address)
     - Auto-fill registration forms using extracted data
     - Convert extracted data into **JSON format**
 
-### Loan Application Handling
+#### Loan Application Handling
 - Manage application submission
 - Connect to financial analysis and risk evaluation
 - Prepare data for database storage and API exchange
 
 ---
 
-## **3️⃣ Database**
+### **3️⃣ Database**
 
 **Technology:**  
 - **Firebase Cloud Storage**
@@ -120,144 +118,50 @@ The solution is composed of four main layers:
 
 ---
 
-## **4️⃣ OpenAPI Integrations**
+### **4️⃣ OpenAPI Integrations**
 
 **Purpose:**  
 Enable real-time integration with financial services and government platforms.
 
-### Malaysia Bank & E-Wallet APIs
+#### Malaysia Bank & E-Wallet APIs
 - Maybank, CIMB, RHB, Public Bank, HSBC, OCBC, AmBank, Alliance Bank, UOB
 - E-wallets: Touch 'n Go, GrabPay, ShopeePay
 
-### Legal Authorities APIs
+#### Legal Authorities APIs
 - **SSM (Suruhanjaya Syarikat Malaysia)** – Company Registration
 - **LHDN (Lembaga Hasil Dalam Negeri)** – Tax Compliance & E-Invoice
 - **MyGOV & Government Portals** – Licensing & Subsidy Programs
 
 ---
 
-## **Summary Table**
-
-| Layer          | Technology         | Purpose                                      |
-|----------------|-------------------|----------------------------------------------|
-| Front-end      | React Native       | User app interface & interactions           |
-| Back-end       | Python (FastAPI) / Node.js | Loan stress test, OCR, Auto-fill  |
-| Database       | Firebase           | Store user data, documents, loan info       |
-| OpenAPI        | Bank & Gov APIs    | Registration, e-KYC, payments, compliance   |
-
----
-# Loan Eligibility Risk Classifier
+# 🚀 Loan Eligibility Risk Classifier
 
 This project is an *end-to-end machine learning pipeline* to classify *business loan applications* into risk categories:
 
-- *Safe*
-- *Moderate*
-- *High Risk*
+- ✅ *Safe*
+- ⚠️ *Moderate*
+- ❌ *High Risk*
 
-The model is deployed via *FastAPI* and hosted on *Render.com*.
+The model is deployed via **FastAPI** and hosted on **Render.com**.
 
-## Live API
+---
 
-*Base URL:*  
+## 🌐 Live API
 
+**Base URL:**  
 https://loan-eligibility-ml.onrender.com/
 
-
-*API Documentation (Swagger UI):*  
-
+**API Documentation (Swagger UI):**  
 https://loan-eligibility-ml.onrender.com/docs
 
+---
 
-## Features & Financial Calculations
+## 📊 Features & Financial Calculations
 
-The model uses *24 months of financial transaction data* per business to compute:
+The model uses **24 months of financial transaction data** per business to compute:
 
-### Average Monthly Sales
+💵 Average Monthly Sales
 
-
-Avg_Monthly_Sales = Total Sales Over 24 Months / 24
-
-
-### Average Monthly Expenses
-
-
-Avg_Monthly_Expenses = Total Expenses Over 24 Months / 24
-
-
-### Volatility of Sales
-
-Measures the *business stability*:
-
-
-Volatility = Standard Deviation of Monthly Sales / Average Monthly Sales
-
-
-### Net Operating Cash Flow (NOCF)
-
-
-NOCF = Avg_Monthly_Sales - Avg_Monthly_Expenses
-
-
-### Debt Service Ratio (DSR)
-
-Measures the *ability to service debt*:
-
-
-DSR = NOCF / ((Existing Debt + Loan Request) / 24)
-
-
-## Risk Classification Logic
-
-| Condition | Risk Category |
-|------------|---------------|
-| DSR > 1.8 and Volatility < 0.15 | *Safe* |
-| DSR < 0.8 or Volatility > 0.5 | *High Risk* |
-| Else | *Moderate* |
-
-## ML Pipeline Overview
-
-1. *Synthetic Data Generation*  
-2. *Feature Engineering*  
-3. *Risk Labeling*  
-4. *Model Training (Random Forest Classifier)*  
-5. *API Deployment via FastAPI on Render*
-
-## API Endpoint
-
-### POST /predict
-
-*Input (JSON):*
-
-json
-{
-  "Avg_Monthly_Sales": 50000,
-  "Avg_Monthly_Expenses": 30000,
-  "Volatility": 0.25,
-  "Existing_Debt": 40000,
-  "Loan_Request": 20000,
-  "Net_Operating_Cash_Flow": 20000,
-  "DSR": 2.0
-}
-
-
-*Output:*
-
-json
-{
-  "Risk_Category": "Safe"
-}
-
-
-## Deployment
-
-- *Platform:* Render.com  
-- *Docker-free deployment* using uvicorn directly.
-
-## Next Steps (Optional Enhancements)
-
-- Add *API Key security*  
-- Implement *logging & monitoring*  
-- Integrate with *real financial data sources*
 
 ---
 
