@@ -14,6 +14,11 @@
 - Access financial services such as loans, grants, and government programs  
 
 By streamlining onboarding into a **single, reusable flow**, JomNiaga reduces paperwork, minimizes dropout rates, and unlocks continuous access to financial tools. The platform nudges MSMEs toward better financial practices while supporting **sustainability** and **inclusivity** as part of Malaysia's evolving digital payment ecosystem.
+---
+## Get Started with JomNiaga  
+This guide will walk you through setting up the JomNiaga app on your machine using Expo Go.  
+1. Download Expo Go app from App store or Google Playstore.
+2. Scan the QR below using your device's camera
 
 ---
 
@@ -156,11 +161,37 @@ https://loan-eligibility-ml.onrender.com/docs
 
 ---
 
-## 📊 Features & Financial Calculations
+# 📊 Features & Financial Calculations
 
-The model uses **24 months of financial transaction data** per business to compute:
+The model uses *24 months of financial transaction data* per business to compute the following metrics:
 
-💵 Average Monthly Sales
+### 💵 Average Monthly Sales
+
+
+### 💸 Average Monthly Expenses
+
+
+### 📈 Volatility of Sales
+
+*Measures the business stability:*
+
+### 🔄 Net Operating Cash Flow (NOCF)
+
+
+
+### 🧮 Debt Service Ratio (DSR)
+
+*Measures the ability to service debt:*
+
+---
+
+# 🧠 Risk Classification Logic
+
+| Condition | Risk Category |
+|------------|---------------|
+| DSR > 1.8 and Volatility < 0.15 | ✅ *Safe* |
+| DSR < 0.8 or Volatility > 0.5 | ❌ *High Risk* |
+| Else | ⚠️ *Moderate* |
 
 
 ---
