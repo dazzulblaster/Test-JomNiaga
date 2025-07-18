@@ -90,7 +90,7 @@ The solution is composed of four main layers:
 ### **2️⃣ Back-end**
 
 **Technology:**  
-- **FastAPI (Python)** or **Node.js**
+- **FastAPI (Python)** and **Node.js**
 
 **Features:**
 
