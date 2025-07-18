@@ -14,12 +14,14 @@
 - Access financial services such as loans, grants, and government programs  
 
 By streamlining onboarding into a **single, reusable flow**, JomNiaga reduces paperwork, minimizes dropout rates, and unlocks continuous access to financial tools. The platform nudges MSMEs toward better financial practices while supporting **sustainability** and **inclusivity** as part of Malaysia's evolving digital payment ecosystem.
+
 ---
+
 ## Get Started with JomNiaga  
 This guide will walk you through setting up the JomNiaga app on your machine using Expo Go.  
 1. Download Expo Go app from App store or Google Playstore.
 2. Scan the QR below using your device's camera
-
+![Solution Architecture](./expoqr.jpg) 
 ---
 
 ## 🚧 Challenges
