@@ -17,13 +17,6 @@ By streamlining onboarding into a **single, reusable flow**, JomNiaga reduces pa
 
 ---
 
-## Get Started with JomNiaga  
-This guide will walk you through setting up the JomNiaga app on your machine using Expo Go.  
-1. Download Expo Go app from App store or Google Playstore.
-2. Scan the QR below using your device's camera
-![Solution Architecture](./expoqr.jpg) 
----
-
 ## 🚧 Challenges
 
 1. **Complex MSME Onboarding**  
