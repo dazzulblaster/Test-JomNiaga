@@ -39,23 +39,32 @@ This guide will walk you through setting up the JomNiaga app on your machine usi
 
 ## ✨ Key Features
 
-- **One-Stop Business Onboarding** 🗂️  
-   Simplifies MSME registration, licensing, and compliance into a single, guided flow.
+- **One-Stop Business Onboarding 🗂️**  
+  Simplifies MSME registration, licensing, and compliance into a single, automated process using document scanning and auto-fill features.
 
-- **Digital Payment Integration** 💳  
-   Connects MSMEs to QR payments, e-invoicing, and settlements—no technical expertise needed.
+- **Digital Payment Integration 💳**  
+  Enables MSMEs to easily accept payments through **DuitNow QR**, e-invoicing, and digital payment gateways.
 
-- **Financial Access Enablement** 💰  
-   Unlocks access to loans, grants, and government programs via digital identity verification.
+- **Financial Access Enablement 💰**  
+  Provides MSMEs with access to loans, grants, and government programs through continuous financial assessment and eligibility checks.
 
-- **Real-Time Notifications** 🔔  
-   Alerts MSMEs about license renewals, compliance deadlines, and funding opportunities.
+- **Real-Time Notifications 🔔**  
+  Sends timely alerts for license renewals, compliance deadlines, and available funding opportunities.
 
-- **Simplified User Experience** 🧭  
-   Tailored for MSMEs of all sizes and digital literacy levels, reducing dropout rates.
+- **Simplified User Experience 🧭**  
+  Offers a user-friendly interface designed to be accessible for MSMEs of all sizes and digital literacy levels.
 
-- **Continuous Support & Growth** 📈  
-   Provides ongoing services like credit scoring, analytics, and business insights.
+- **Continuous Support & Growth 📈**  
+  Delivers ongoing financial health assessments and business insights to help MSMEs grow and improve their operations.
+
+- **NiagaChat: Your MSME Assistant 🤖**  
+  Guides users through business-related tasks by suggesting financial aids, services, and educational content through an interactive chatbot.
+
+- **NiagaCommunity: Educational Content 📚**  
+  Provides MSMEs with educational content, success stories, and interactive resources to empower them in their business journey.
+
+- **NiagaCentre: Service Marketplace 🛠️**  
+  Allows MSMEs to offer and receive services that help each other grow, such as consulting, design, and marketing.
 
 ---
 
@@ -65,79 +74,38 @@ This guide will walk you through setting up the JomNiaga app on your machine usi
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ **Technology Stack**
 
-This document outlines the architecture and technologies used in the MSME onboarding and loan application platform.
+### **Frontend:**
+- **React Native** – For building cross-platform mobile applications for both iOS and Android.
 
-### **Architecture Overview**
+### **Backend:**
+- **FastAPI** – A modern, fast web framework for building APIs with Python, used for financial calculations and backend services.
+- **Node.js** – For handling non-blocking, event-driven server-side applications (if applicable for other backend services).
 
-The solution is composed of four main layers:
+### **Database:**
+- **Firebase Realtime Database** – A cloud-hosted NoSQL database that allows data to be synced in real-time across all clients.
+- **Firebase Cloud Storage** – For storing and serving user files such as documents, images, etc.
 
----
+### **Authentication:**
+- **Firebase Authentication** – Provides backend services to help authenticate users, including simple pass-through authentication using passwords, social media logins (Google, Facebook), and phone numbers.
 
-### **1️⃣ Front-end**
+### **Machine Learning & Automation:**
+- **n8n** – For workflow automation and integrating third-party services to automate tasks like loan eligibility checks, financial data assessment, etc.
+- **Pinecone** – Used for vector embeddings, powering smarter recommendations in the app (e.g., content and business suggestions).
 
-**Technology:**  
-- **React Native**
+### **External Integrations:**
+- **SSM API** – For accessing business registration data to verify business details.
+- **LHDN (Peppol Network)** – For integrating e-invoicing and tax compliance features.
+- **MDEC API** – For integration with government programs, like grants and microcredit services.
 
-**Purpose:**  
-- Provide a mobile-first user interface for MSMEs
-- Simplify registration, document submission, and loan applications
-- Interact with backend services through API calls
-
----
-
-### **2️⃣ Back-end**
-
-**Technology:**  
-- **FastAPI (Python)** and **Node.js**
-
-**Features:**
-
-#### Loan Stress Test Module
-- **Python Script**
-    - Calculate **Debt Service Ratio (DSR)**
-    - Compute **Business Volatility**
-    - Categorize **Risk Level**: Safe, Moderate, High Risk
-
-#### Auto Fill-in Registration
-- **OCR & Computer Vision**
-    - Use **Snap IC** feature to capture identity card images
-    - Extract text data (IC number, Name, Address)
-    - Auto-fill registration forms using extracted data
-    - Convert extracted data into **JSON format**
-
-#### Loan Application Handling
-- Manage application submission
-- Connect to financial analysis and risk evaluation
-- Prepare data for database storage and API exchange
+### **Hosting & Deployment:**
+- **Expo** – For React Native app development and deployment.
+- **Render** – For backend hosting, serverless functions, and managing API endpoints.
 
 ---
 
-### **3️⃣ Database**
-
-**Technology:**  
-- **Firebase Cloud Storage**
-    - Store scanned documents and IC images
-
-- **Firebase Realtime Database**
-    - Store user profiles, financial data, and application records
-
----
-
-### **4️⃣ OpenAPI Integrations**
-
-**Purpose:**  
-Enable real-time integration with financial services and government platforms.
-
-#### Malaysia Bank & E-Wallet APIs
-- Maybank, CIMB, RHB, Public Bank, HSBC, OCBC, AmBank, Alliance Bank, UOB
-- E-wallets: Touch 'n Go, GrabPay, ShopeePay
-
-#### Legal Authorities APIs
-- **SSM (Suruhanjaya Syarikat Malaysia)** – Company Registration
-- **LHDN (Lembaga Hasil Dalam Negeri)** – Tax Compliance & E-Invoice
-- **MyGOV & Government Portals** – Licensing & Subsidy Programs
+This **technology stack** gives an overview of the key tools, services, and frameworks used in building **JomNiaga**, helping developers understand the architecture and dependencies of the app.
 
 ---
 
